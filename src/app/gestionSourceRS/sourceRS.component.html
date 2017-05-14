@@ -1,0 +1,47 @@
+<h1>Ajout des sources</h1>
+<div>
+  <md-card class="example-card" >
+    <label>Introduit les informations d'une source:</label>
+    <table class="example-width" cellspacing="0">
+      <tr>
+        <td>
+          <md-select #SrcCon placeholder="Concurrent">
+            <md-option *ngFor="let concurrent of myconcurrent" [value]="concurrent.id">
+              {{ concurrent.nom  }}
+            </md-option>
+          </md-select>
+        </td>
+        <td>
+          <md-select #SrcType placeholder="Type">
+            <md-option *ngFor="let configRS of myconfigRS" [value]="configRS.id">
+              {{ configRS.nomRS  }}
+            </md-option>
+          </md-select>
+        </td>
+        <td>
+          <md-input-container class="example-full-width">
+            <input mdInput #SrcURL type="url" maxlength="100" placeholder="url">
+          </md-input-container>
+        </td>
+        <td>
+          <button md-button class="btn1" (click)="add(SrcNom.value,SrcCon.value,SrcType.value,SrcURL.value); SrcNom.value='';SrcCon.value='';SrcType.value='';SrcURL.value=''">
+            Ajouter Source
+          </button></td>
+
+      </tr>
+    </table>
+  </md-card >
+  <h1>Liste des Source</h1>
+  <md-card class="example-card">
+
+    <ul class="src">
+      <li *ngFor="let SourceRS of mysourceRS"(click)="onSelect(SourceRS)"
+          [class.selected]="SourceRS === selectedSourceRS">
+        <span class="badge">{{SourceRS.id}}</span>
+        <span>  <a href="{{SourceRS.lien}}"></a> </span>
+        <button class="delete"
+                (click)="openDialog()">x</button>
+      </li>
+    </ul>
+  </md-card>
+</div>

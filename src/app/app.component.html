@@ -1,3 +1,71 @@
-<h1>
-  {{title}}
-</h1>
+<!-- flex container displaying children as a column -->
+<section class="app flex-container" fxLayout="column" fxLayoutAlign="start stretch">
+
+  <md-toolbar color="primary" class="mat-elevation-z10">
+    <a class="docs-button mat-button" md-button=""  href="" aria-disabled="false" tabindex="0">
+      <span class="mat-button-wrapper">
+   <img alt="mobilis" class="mobilis-logo" src="../assets/img/mobilis.png" width="100px ">
+      </span>
+    </a>
+    <span class="example-spacer"></span>
+    <button md-icon-button [mdMenuTriggerFor]="menu">
+      <md-icon>more_vert</md-icon>
+    </button>
+    <md-menu #menu="mdMenu">
+      <button md-menu-item>
+        <span>Paramètres</span>
+      </button>
+      <button md-menu-item>
+        <span>Se déconntecter</span>
+      </button>
+    </md-menu>
+
+  </md-toolbar>
+
+  <md-sidenav-container fxFlex="100" fxLayout="row" fxLayoutAlign="start stretch">
+    <md-sidenav mode="side" opened="true" fxFlex="15" fxLayout="column" fxLayoutAlign="start stretch">
+      <md-card class="example-card" fxFlex="20">
+        <md-card-header>
+          <div md-card-avatar class="example-header-image"></div>
+          <md-card-title>Marref Rahma</md-card-title><!--voir comment ajouter la fonction {{this.getUser()}} ici*/-->
+
+          <md-card-subtitle>Stagiaire</md-card-subtitle>
+        </md-card-header>
+      </md-card>
+
+
+        <a md-menu-item routerLink="/user" fxFlex="8" routerLinkActive="active">
+          <span class="listS"> Gestion des utilisateurs </span>
+        </a>
+      <a md-menu-item routerLink="/concurrent" fxFlex="8" routerLinkActive="active">
+        <span class="listS"> Concurrents </span>
+      </a>
+      <h3>Collecte RS</h3>
+      <a md-menu-item routerLink="/configRS" fxFlex="8" routerLinkActive="active">
+        <span class="listS"> Configuration RS </span>
+      </a>
+      <a md-menu-item routerLink="/sourceRS" fxFlex="8" routerLinkActive="active" >
+        <span class="listS"> Sources RS </span>
+      </a>
+      <a md-menu-item routerLink="/motCle" fxFlex="8" routerLinkActive="active">
+        <span class="listS"> Mots clés </span>
+      </a>
+      <h3>Collecte Sites web</h3>
+
+         <a md-menu-item routerLink="/SourceSite" fxFlex="8" routerLinkActive="active" >
+        <span class="listS"> Sources Web </span>
+          </a>
+
+      <a md-menu-item routerLink="/configSite" fxFlex="8" routerLinkActive="active">
+        <span class="listS"> configuration sites Web </span>
+      </a>
+
+    </md-sidenav>
+
+    <div class="my-content" fxFlex="80" fxLayout.md="column" fxLayoutAlign="start stretch">
+
+      <router-outlet></router-outlet>
+
+    </div>
+  </md-sidenav-container>
+</section>

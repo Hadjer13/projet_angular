@@ -1,0 +1,69 @@
+md-toolbar {
+  z-index: 10;
+}
+md-sidenav {
+/*  width: 200px;*/
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+.example-icon {
+  padding: 0 14px;
+}
+
+.docs-button[md-button], .docs-button[md-raised-button] {
+  text-transform: uppercase;
+}
+
+
+.example-card {
+ /* width: 200px;*/
+}
+
+h3 {
+  display: block;
+  font-size: 1.17em;
+  color: aliceblue;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  font-weight: bold;
+}
+
+.listS
+{
+  font-family: Roboto;
+  font-style: inherit;
+  font-size: 15px;
+
+}
+
+md-sidenav-container h3 {
+  border: none;
+  font-size: 10px;
+  letter-spacing: 1px;
+  background-color: #4D9620;
+  line-height: 24px;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin: 0;
+  padding: 0 16px;
+}
+
+.example-header-image {
+  background-image: url('../assets/img/large.jpg');
+  background-size: cover;
+}
+
+.docs-component-viewer-sidenav li {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  margin: 0;
+  padding: 0;
+}
+
+ .docs-component-viewer-sidenav li {
+            color: rgba(0, 0, 0, 0.541176);
+            border-color: rgba(0, 0, 0, 0.0588235);
+          }

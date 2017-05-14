@@ -1,0 +1,48 @@
+<h1>Ajout des configuration</h1>
+<div>
+<md-card class="example-card" >
+    <label>Introduit les paramètres d'une nouvelle congfiguration</label>
+    <table class="example-width" cellspacing="0">
+      <tr>
+        <td>
+          <md-input-container class="example-full-width">
+            <input mdInput #typee type="text" placeholder="Nom RS">
+          </md-input-container>
+        </td>
+        <td>
+          <md-input-container class="example-full-width">
+            <input mdInput #appID type="text" placeholder="App ID">
+          </md-input-container>
+        </td>
+        <td>
+          <md-input-container class="example-full-width">
+            <input mdInput #appSecret type="password" placeholder="appSecret">
+          </md-input-container>
+        </td>
+        <td>
+          <md-input-container class="example-full-width">
+            <input mdInput #timer type="number" placeholder="timer">
+          </md-input-container>
+        </td>
+        <td>
+          <button md-button class="btn1" (click)="add(typee.value,appID.value,appSecret.value,timer.value); NameRS.value='';appID.value='';appSecret.value='';timer.value=''">
+            Ajouter
+          </button></td>
+
+      </tr>
+    </table>
+</md-card >
+<h1>Liste des configuration</h1>
+<md-card class="example-card">
+
+  <ul class="config">
+    <li *ngFor="let configRS of myconfigRS"(click)="onSelect(configRS)"
+        [class.selected]="configRS === selectedconfig">
+      <span class="badge">{{configRS.id}}</span>
+      <span>{{configRS.typee}} </span>
+      <button class="delete"
+              (click)="openDialog()">x</button>
+    </li>
+  </ul>
+</md-card>
+</div>
